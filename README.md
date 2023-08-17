@@ -1,4 +1,4 @@
-This repo will discuss how to deploy Cilium in AKS clusters in 
+This repo will discuss how to deploy Cilium on AKS clusters in 
 * BYOCNI mode
 * Azure CNI powered by Cilium
 * Isovalent Enterprise for Cilium
