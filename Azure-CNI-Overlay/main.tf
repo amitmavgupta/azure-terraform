@@ -1,42 +1,39 @@
-provider "azurerm" {
-  features {}
-}
-resource "azurerm_resource_group" "test" {
-  name     = "acctestRG"
+resource "azurerm_resource_group" "azurecilium" {
+  name     = "azurecilium"
   location = "canadacentral"
 }
 
-resource "azurerm_virtual_network" "test" {
-  name                = "acctestRG-vnet"
-  address_space       = ["10.0.0.0/8"]
-  location            = azurerm_resource_group.test.location
-  resource_group_name = azurerm_resource_group.test.name
+resource "azurerm_virtual_network" "azurecilium" {
+  name                = "azurecilium-vnet"
+  address_space       = ["192.168.10.0/24"]
+  location            = azurerm_resource_group.azurecilium.location
+  resource_group_name = azurerm_resource_group.azurecilium.name
 }
 
-resource "azurerm_subnet" "test" {
-  name                 = "acctestRG-subnet"
-  resource_group_name  = azurerm_resource_group.test.name
-  virtual_network_name = azurerm_virtual_network.test.name
-  address_prefixes     = ["10.10.0.0/16"]
+resource "azurerm_subnet" "azurecilium" {
+  name                 = "azurecilium-subnet"
+  resource_group_name  = azurerm_resource_group.azurecilium.name
+  virtual_network_name = azurerm_virtual_network.azurecilium.name
+  address_prefixes     = ["192.168.10.0/24"]
 
 }
 
-resource "azurerm_kubernetes_cluster" "test" {
-  name                = "acctestaks"
-  location            = azurerm_resource_group.test.location
-  resource_group_name = azurerm_resource_group.test.name
-  dns_prefix          = "acctestaks"
+resource "azurerm_kubernetes_cluster" "azurecilium" {
+  name                = "azurecilium"
+  location            = azurerm_resource_group.azurecilium.location
+  resource_group_name = azurerm_resource_group.azurecilium.name
+  dns_prefix          = "azurecilium"
   default_node_pool {
-    name           = "default"
-    node_count     = 2
-    vm_size        = "Standard_DS2_v2"
-    vnet_subnet_id = azurerm_subnet.test.id
+    name              = "azurecilium"
+    node_count        = 2
+    vm_size           = "Standard_DS2_v2"
+    vnet_subnet_id    = azurerm_subnet.azurecilium.id
   }
   identity {
     type = "SystemAssigned"
   }
   network_profile {
-    network_plugin      = "azure"
-    network_policy 	= "azure"
+    network_plugin	    = "azure"
+    network_plugin_mode	= "overlay"
   }
 }
