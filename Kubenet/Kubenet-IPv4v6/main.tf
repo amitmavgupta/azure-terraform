@@ -6,8 +6,8 @@ resource "azurerm_resource_group" "kubenetds" {
 resource "azurerm_virtual_network" "kubenetipv4" {
   name                = "kubenetipv4-vnet"
   address_space       = ["192.168.10.0/24"]
-  location            = azurerm_resource_group.kubenetipv4.location
-  resource_group_name = azurerm_resource_group.kubenetipv4.name
+  location            = azurerm_resource_group.kubenetds.location
+  resource_group_name = azurerm_resource_group.kubenetds.name
 }
 
 resource "azurerm_subnet" "kubenetipv4subnet" {
@@ -20,7 +20,7 @@ resource "azurerm_subnet" "kubenetipv4subnet" {
 resource "azurerm_virtual_network" "kubenetipv6" {
   name                = "kubenetipv6"
   address_space       = ["1900::/64"]
-  location            = azurerm_resource_group.kubenetipv6.location
+  location            = azurerm_resource_group.kubenetds.location
   resource_group_name = azurerm_resource_group.kubenetds.name
 }
 
