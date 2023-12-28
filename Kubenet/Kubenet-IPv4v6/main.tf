@@ -32,10 +32,10 @@ resource "azurerm_subnet" "kubenetipv6subnet" {
 }
 
 resource "azurerm_kubernetes_cluster" "kubenetds" {
-  name                = "azurecilium"
+  name                = "kubenetdsaks"
   location            = azurerm_resource_group.kubenetds.location
   resource_group_name = azurerm_resource_group.kubenetds.name
-  dns_prefix          = "kubenetds"
+  dns_prefix          = "kubenetdsaks"
   default_node_pool {
     name       = "kubenetds"
     node_count = 2
