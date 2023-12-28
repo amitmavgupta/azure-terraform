@@ -21,7 +21,7 @@ resource "azurerm_subnet" "azurecni" {
 
 }
 
-resource "azurerm_kubernetes_cluster" "azurecni" {
+resource "azurerm_kubernetes_cluster" "azurecniaks" {
   name                = "azurecniaks"
   location            = azurerm_resource_group.test.location
   resource_group_name = azurerm_resource_group.test.name
