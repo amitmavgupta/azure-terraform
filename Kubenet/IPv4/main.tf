@@ -13,7 +13,6 @@ resource "azurerm_subnet" "kubenetipv4" {
   resource_group_name  = azurerm_resource_group.kubenetipv4.name
   virtual_network_name = azurerm_virtual_network.kubenetipv4.name
   address_prefixes     = ["192.168.10.0/24"]
-
 }
 resource "azurerm_kubernetes_cluster" "kubenetipv4" {
   name                = "kubenetipv4aks"
