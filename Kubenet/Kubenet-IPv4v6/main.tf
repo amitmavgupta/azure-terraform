@@ -1,41 +1,41 @@
-resource "azurerm_resource_group" "azurecilium" {
-  name     = "azurecilium"
+resource "azurerm_resource_group" "kubenetds" {
+  name     = "kubenetds"
   location = "canadacentral"
 }
 
-resource "azurerm_virtual_network" "azurecilium" {
-  name                = "azurecilium-vnet"
+resource "azurerm_virtual_network" "kubenetipv4" {
+  name                = "kubenetipv4-vnet"
   address_space       = ["192.168.10.0/24"]
-  location            = azurerm_resource_group.azurecilium.location
-  resource_group_name = azurerm_resource_group.azurecilium.name
+  location            = azurerm_resource_group.kubenetipv4.location
+  resource_group_name = azurerm_resource_group.kubenetipv4.name
 }
 
-resource "azurerm_subnet" "subnet1" {
-  name                 = "subnet1"
-  virtual_network_name = azurerm_virtual_network.azurecilium.name
+resource "azurerm_subnet" "kubenetipv4subnet" {
+  name                 = "kubenetipv4subnet"
+  virtual_network_name = azurerm_virtual_network.kubenetipv4.name
   address_prefixes     = ["192.168.10.0/24"]
-  resource_group_name  = azurerm_resource_group.azurecilium.name
+  resource_group_name  = azurerm_resource_group.kubenetds.name
 }
 
-resource "azurerm_virtual_network" "azurecilium6" {
-  name                = "azurecilium-vnet6"
+resource "azurerm_virtual_network" "kubenetipv6" {
+  name                = "kubenetipv6"
   address_space       = ["1900::/64"]
-  location            = azurerm_resource_group.azurecilium.location
-  resource_group_name = azurerm_resource_group.azurecilium.name
+  location            = azurerm_resource_group.kubenetipv6.location
+  resource_group_name = azurerm_resource_group.kubenetds.name
 }
 
-resource "azurerm_subnet" "subnet2" {
-  name                 = "subnet2"
-  virtual_network_name = azurerm_virtual_network.azurecilium6.name
+resource "azurerm_subnet" "kubenetipv6subnet" {
+  name                 = "kubenetipv6subnet"
+  virtual_network_name = azurerm_virtual_network.kubenetipv6.name
   address_prefixes     = ["1900::/64"]
-  resource_group_name  = azurerm_resource_group.azurecilium.name
+  resource_group_name  = azurerm_resource_group.kubenetds.name
 }
 
-resource "azurerm_kubernetes_cluster" "azurecilium" {
+resource "azurerm_kubernetes_cluster" "kubenetds" {
   name                = "azurecilium"
-  location            = azurerm_resource_group.azurecilium.location
-  resource_group_name = azurerm_resource_group.azurecilium.name
-  dns_prefix          = "azurecilium"
+  location            = azurerm_resource_group.kubenetds.location
+  resource_group_name = azurerm_resource_group.kubenetds.name
+  dns_prefix          = "kubenetds"
   default_node_pool {
     name       = "azurecilium"
     node_count = 2
