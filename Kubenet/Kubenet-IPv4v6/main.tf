@@ -37,7 +37,7 @@ resource "azurerm_kubernetes_cluster" "kubenetds" {
   resource_group_name = azurerm_resource_group.kubenetds.name
   dns_prefix          = "kubenetds"
   default_node_pool {
-    name       = "azurecilium"
+    name       = "kubenetds"
     node_count = 2
     vm_size    = "Standard_DS2_v2"
   }
