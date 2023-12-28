@@ -13,7 +13,6 @@ resource "azurerm_subnet" "azcnioverlay" {
   resource_group_name  = azurerm_resource_group.azcnioverlay.name
   virtual_network_name = azurerm_virtual_network.azcnioverlay.name
   address_prefixes     = ["192.168.10.0/24"]
-
 }
 resource "azurerm_kubernetes_cluster" "azcnioverlay" {
   name                = "azcnioverlayaks"
