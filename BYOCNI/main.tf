@@ -8,7 +8,7 @@ resource "azurerm_virtual_network" "byocni" {
   location            = azurerm_resource_group.byocni.location
   resource_group_name = azurerm_resource_group.byocni.name
 }
-resource "azurerm_subnet" "azurecilium" {
+resource "azurerm_subnet" "byocni" {
   name                 = "byocni-subnet"
   resource_group_name  = azurerm_resource_group.byocni.name
   virtual_network_name = azurerm_virtual_network.byocni.name
@@ -29,9 +29,9 @@ resource "azurerm_kubernetes_cluster" "byocni" {
     type = "SystemAssigned"
   }
   network_profile {
-    pod_cidr            = "10.10.0.0/22"
-    service_cidr        = "10.20.0.0/24"
-    dns_service_ip      = "10.20.0.10"
-    network_plugin      = "none"
+    pod_cidr       = "10.10.0.0/22"
+    service_cidr   = "10.20.0.0/24"
+    dns_service_ip = "10.20.0.10"
+    network_plugin = "none"
   }
 }
