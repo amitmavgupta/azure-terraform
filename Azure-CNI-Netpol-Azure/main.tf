@@ -1,29 +1,29 @@
-resource "azurerm_resource_group" "azurecni" {
-  name     = "azurecnirg"
+resource "azurerm_resource_group" "azcni" {
+  name     = "azcnirg"
   location = "canadacentral"
 }
-resource "azurerm_virtual_network" "azurecni" {
-  name                = "azurecni-vnet"
+resource "azurerm_virtual_network" "azcni" {
+  name                = "azcni-vnet"
   address_space       = ["10.0.0.0/8"]
-  location            = azurerm_resource_group.azurecni.location
-  resource_group_name = azurerm_resource_group.azurecni.name
+  location            = azurerm_resource_group.azcni.location
+  resource_group_name = azurerm_resource_group.azcni.name
 }
-resource "azurerm_subnet" "azurecni" {
-  name                 = "azurecni-subnet"
-  resource_group_name  = azurerm_resource_group.azurecni.name
-  virtual_network_name = azurerm_virtual_network.azurecni.name
+resource "azurerm_subnet" "azcni" {
+  name                 = "azcni-subnet"
+  resource_group_name  = azurerm_resource_group.azcni.name
+  virtual_network_name = azurerm_virtual_network.azcni.name
   address_prefixes     = ["10.10.0.0/16"]
 }
-resource "azurerm_kubernetes_cluster" "azurecni" {
-  name                = "azurecniaks"
-  location            = azurerm_resource_group.azurecni.location
-  resource_group_name = azurerm_resource_group.azurecni.name
-  dns_prefix          = "azurecniaks"
+resource "azurerm_kubernetes_cluster" "azcni" {
+  name                = "azcniaks"
+  location            = azurerm_resource_group.azcni.location
+  resource_group_name = azurerm_resource_group.azcni.name
+  dns_prefix          = "azcniaks"
   default_node_pool {
-    name           = "azurecni"
+    name           = "azcni"
     node_count     = 2
     vm_size        = "Standard_DS2_v2"
-    vnet_subnet_id = azurerm_subnet.azurecni.id
+    vnet_subnet_id = azurerm_subnet.azcni.id
   }
   identity {
     type = "SystemAssigned"
