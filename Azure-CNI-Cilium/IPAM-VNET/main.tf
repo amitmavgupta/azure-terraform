@@ -1,47 +1,43 @@
-resource "azurerm_resource_group" "azurecilium" {
-  name     = "azurecilium"
+resource "azurerm_resource_group" "azpcdynamic" {
+  name     = "azpcdynamic"
   location = "canadacentral"
 }
-
-resource "azurerm_virtual_network" "azurecilium" {
-  name                = "azurecilium-vnet"
+resource "azurerm_virtual_network" "azpcdynamic" {
+  name                = "azpcdynamic-vnet"
   address_space       = ["10.0.0.0/8"]
-  location            = azurerm_resource_group.azurecilium.location
-  resource_group_name = azurerm_resource_group.azurecilium.name
+  location            = azurerm_resource_group.azpcdynamic.location
+  resource_group_name = azurerm_resource_group.azpcdynamic.name
 }
-
-resource "azurerm_subnet" "azureciliumnodes" {
-  name                 = "azurecilium-subnet-node"
-  resource_group_name  = azurerm_resource_group.azurecilium.name
-  virtual_network_name = azurerm_virtual_network.azurecilium.name
+resource "azurerm_subnet" "azpcdynamicnodes" {
+  name                 = "azpcdynamic-subnet-node"
+  resource_group_name  = azurerm_resource_group.azpcdynamic.name
+  virtual_network_name = azurerm_virtual_network.azpcdynamic.name
   address_prefixes     = ["10.240.0.0/16"]
-
 }
-
-resource "azurerm_subnet" "azureciliumpods" {
-  name                 = "azurecilium-subnet-pods"
-  resource_group_name  = azurerm_resource_group.azurecilium.name
-  virtual_network_name = azurerm_virtual_network.azurecilium.name
+resource "azurerm_subnet" "azpcdynamicpods" {
+  name                 = "azpcdynamic-subnet-pods"
+  resource_group_name  = azurerm_resource_group.azpcdynamic.name
+  virtual_network_name = azurerm_virtual_network.azpcdynamic.name
   address_prefixes     = ["10.241.0.0/16"]
-
 }
-
-resource "azurerm_kubernetes_cluster" "azurecilium" {
+resource "azurerm_kubernetes_cluster" "azpcdynamic" {
   name                = "azurecilium"
-  location            = azurerm_resource_group.azurecilium.location
-  resource_group_name = azurerm_resource_group.azurecilium.name
-  dns_prefix          = "azurecilium"
+  location            = azurerm_resource_group.azpcdynamic.location
+  resource_group_name = azurerm_resource_group.azpcdynamic.name
+  dns_prefix          = "azpcdynamic"
   default_node_pool {
-    name           = "azurecilium"
+    name           = "azpcdynamic"
     node_count     = 2
     vm_size        = "Standard_DS2_v2"
-    vnet_subnet_id = azurerm_subnet.azureciliumnodes.id
-    pod_subnet_id  = azurerm_subnet.azureciliumpods.id
+    vnet_subnet_id = azurerm_subnet.azpcdynamicnodes.id
+    pod_subnet_id  = azurerm_subnet.azpcdynamicpods.id
 
   }
+
   identity {
     type = "SystemAssigned"
   }
+
   network_profile {
     network_plugin  = "azure"
     ebpf_data_plane = "cilium"
