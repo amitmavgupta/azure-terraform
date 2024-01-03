@@ -11,7 +11,7 @@ You will also get to learn how to deploy an AKS cluster using the other AKS CNI'
 * Kubenet in IPv4 and Dual Stock mode
 * Bring your own CNI (BYOCNI)
 * Bring your own CNI (BYOCNI) with Azure Linux as the host OS
-* Azure CNI Overlay in IPv4 and Dual Stack Mode (in preview mode currently)
+* Azure CNI Overlay in IPv4
 * Azure CNI with Azure NPM as the network policy 
 * Azure CNI with Calico as the network policy
 
