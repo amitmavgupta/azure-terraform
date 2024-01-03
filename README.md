@@ -12,7 +12,7 @@ This repo will discuss how to deploy Cilium on AKS clusters using the following 
 You will also get to learn how to deploy an AKS cluster using the other AKS CNI's like:
 * Kubenet in IPv4 and Dual Stock mode
 * Azure CNI Overlay in IPv4 and Dual Stack Mode
-* Azure CNI with Azure NPM as the network policy
+* Azure CNI with Azure NPM as the network policy 
 * Azure CNI with Calico as the network policy
 
 # Ensure you have enough quota
