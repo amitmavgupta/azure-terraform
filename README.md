@@ -1,7 +1,7 @@
 # What is the main purpose of the repo?
 This repo will discuss how to deploy Cilium on AKS clusters using the following CNI's:
-* Isovalent Enterprise for Cilium in Azure Marketplace with all enterprise feature(s) available.
-* Isovalent Enterprise for Cilium in Azure Marketplace (Azure Linux as the host OS) with all enterprise feature(s) available.
+* Isovalent Enterprise for Cilium in Azure Marketplace.
+* Isovalent Enterprise for Cilium in Azure Marketplace (Azure Linux as the host OS).
 * Azure CNI powered by Cilium (Overlay Mode) with Cilium as the Network Policy
 * Azure CNI powered by Cilium (Dynamic IP allocation) with Cilium as the Network Policy
 * Azure CNI powered by Cilium (Overlay Mode) with Azure Linux as the host OS
