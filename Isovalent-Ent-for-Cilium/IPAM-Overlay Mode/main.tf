@@ -1,14 +1,14 @@
-resource "azurerm_resource_group" "azpcoverlay" {
-  name     = "azpcoverlay"
+resource "azurerm_resource_group" "ie4coverlay" {
+  name     = "ie4coverlay"
   location = "canadacentral"
 }
-resource "azurerm_kubernetes_cluster" "azpcoverlay" {
-  name                = "azpcoverlay"
-  location            = azurerm_resource_group.azpcoverlay.location
-  resource_group_name = azurerm_resource_group.azpcoverlay.name
-  dns_prefix          = "azpcoverlay"
+resource "azurerm_kubernetes_cluster" "ie4coverlay" {
+  name                = "ie4coverlay"
+  location            = azurerm_resource_group.ie4coverlay.location
+  resource_group_name = azurerm_resource_group.ie4coverlay.name
+  dns_prefix          = "ie4coverlay"
   default_node_pool {
-    name       = "azpcoverlay"
+    name       = "ie4coverlay"
     node_count = 2
     vm_size    = "Standard_DS2_v2"
   }
@@ -29,7 +29,7 @@ resource "azurerm_kubernetes_cluster" "azpcoverlay" {
 
 resource "azurerm_kubernetes_cluster_extension" "cilium" {
   name           = "cilium"
-  cluster_id     = azurerm_kubernetes_cluster.azpcoverlay.id
+  cluster_id     = azurerm_kubernetes_cluster.ie4coverlay.id
   extension_type = "Isovalent.CiliumEnterprise.One"
   plan {
     name      = var.plan_name
