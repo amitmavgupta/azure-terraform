@@ -14,3 +14,9 @@ You will also get to learn how to deploy an AKS cluster using the other AKS CNI'
 * Azure CNI Overlay in IPv4 and Dual Stack Mode
 * Azure CNI with Azure NPM as the network policy
 * Azure CNI with Calico as the network policy
+
+# Ensure you have enough quota
+Go to the Subscription blade, navigate to "Usage + Quotas", and make sure you have enough quota for the following resources:
+
+- Regional vCPUs
+- Standard Dv4 Family vCPUs
