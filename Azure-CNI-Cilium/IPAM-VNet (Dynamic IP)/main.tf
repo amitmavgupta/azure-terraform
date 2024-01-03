@@ -21,7 +21,7 @@ resource "azurerm_subnet" "azpcdynamicpods" {
   address_prefixes     = ["10.241.0.0/16"]
 }
 resource "azurerm_kubernetes_cluster" "azpcdynamic" {
-  name                = "azurecilium"
+  name                = "azpcdynamic"
   location            = azurerm_resource_group.azpcdynamic.location
   resource_group_name = azurerm_resource_group.azpcdynamic.name
   dns_prefix          = "azpcdynamic"
