@@ -1,14 +1,14 @@
-resource "azurerm_resource_group" "azpcoverlay" {
-  name     = "azpcoverlay"
+resource "azurerm_resource_group" "azpcoverlayal" {
+  name     = "azpcoverlayal"
   location = "canadacentral"
 }
-resource "azurerm_kubernetes_cluster" "azpcoverlay" {
-  name                = "azpcoverlay"
-  location            = azurerm_resource_group.azpcoverlay.location
-  resource_group_name = azurerm_resource_group.azpcoverlay.name
-  dns_prefix          = "azpcoverlay"
+resource "azurerm_kubernetes_cluster" "azpcoverlayal" {
+  name                = "azpcoverlayal"
+  location            = azurerm_resource_group.azpcoverlayal.location
+  resource_group_name = azurerm_resource_group.azpcoverlayal.name
+  dns_prefix          = "azpcoverlayal"
   default_node_pool {
-    name       = "azpcoverlay"
+    name       = "azpcoverlayal"
     node_count = 2
     os_sku     = "AzureLinux"
     vm_size    = "Standard_DS2_v2"
