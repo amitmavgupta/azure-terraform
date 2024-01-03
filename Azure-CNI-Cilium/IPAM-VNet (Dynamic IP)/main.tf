@@ -31,7 +31,6 @@ resource "azurerm_kubernetes_cluster" "azpcdynamic" {
     vm_size        = "Standard_DS2_v2"
     vnet_subnet_id = azurerm_subnet.azpcdynamicnodes.id
     pod_subnet_id  = azurerm_subnet.azpcdynamicpods.id
-
   }
 
   identity {
