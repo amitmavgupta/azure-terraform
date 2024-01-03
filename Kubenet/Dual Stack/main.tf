@@ -44,10 +44,8 @@ resource "azurerm_kubernetes_cluster" "kubenetds" {
   network_profile {
     network_plugin = "kubenet"
     ip_versions    = ["IPv4", "IPv6"]
-    pod_cidr       = "10.10.0.0/22"
-    service_cidr   = "10.20.0.0/24"
-    dns_service_ip = "10.20.0.10"
     pod_cidrs      = ["10.10.0.0/22", "2001::/64"]
     service_cidrs  = ["10.20.0.0/24", "2001:1::/108"]
+    dns_service_ip = "10.20.0.10"
   }
 }
