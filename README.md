@@ -1,5 +1,5 @@
 # What is the main purpose of the repo?
-This repo will discuss how to deploy Cilium on AKS clusters using the following CNI's:
+This repo will discuss how to deploy Cilium on AKS clusters with Terraform using the following CNI's:
 * Isovalent Enterprise for Cilium in Azure Marketplace.
 * Isovalent Enterprise for Cilium in Azure Marketplace (Azure Linux as the host OS).
 * Azure CNI powered by Cilium (Overlay Mode) with Cilium as the Network Policy
