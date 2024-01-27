@@ -36,5 +36,6 @@ resource "azurerm_kubernetes_cluster" "byopraks" {
     service_cidr   = "10.20.0.0/24"
     dns_service_ip = "10.20.0.10"
     network_plugin = "none"
+    load_balancer_sku = "standard"
   }
 }
