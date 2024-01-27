@@ -6,12 +6,15 @@ This repo will discuss how to deploy Cilium on AKS clusters with Terraform using
 * Azure CNI powered by Cilium (Dynamic IP allocation) with Cilium as the Network Policy
 * Azure CNI powered by Cilium (Overlay Mode) with Azure Linux as the host OS
 * Azure CNI powered by Cilium (Dynamic IP allocation) with Azure Linux as the host OS
+* Azure CNI powered by Cilium (Overlay Mode) for a Private AKS cluster
+* Azure CNI powered by Cilium (Dynamic IP allocation) for a Private AKS cluster
 * Nodepools in Different Availability Zones (with Azure CNI powered by Cilium as the choice of CNI)
 
 You will also get to learn how to deploy an AKS cluster using the other AKS CNI's like:
 * Kubenet in IPv4 and Dual Stock mode
 * Bring your own CNI (BYOCNI)
 * Bring your own CNI (BYOCNI) with Azure Linux as the host OS
+* Bring your own CNI (BYOCNI) for a Private AKS cluster
 * Azure CNI Overlay in IPv4
 * Azure CNI with Azure NPM as the network policy 
 * Azure CNI with Calico as the network policy
