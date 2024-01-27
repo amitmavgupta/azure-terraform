@@ -27,7 +27,7 @@ resource "azurerm_kubernetes_cluster" "azpcdynapr" {
   dns_prefix          = "azpcdynapr"
   private_cluster_enabled  = true
   private_cluster_public_fqdn_enabled = true
-  private_dns_zone_id      = "None"
+  private_dns_zone_id = "None"
   default_node_pool {
     name           = "azpcdynapr"
     node_count     = 2
