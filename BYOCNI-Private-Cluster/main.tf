@@ -21,7 +21,7 @@ resource "azurerm_kubernetes_cluster" "byopraks" {
   dns_prefix          = "byopraks"
   private_cluster_enabled  = true
   private_cluster_public_fqdn_enabled = true
-  private_dns_zone_id = "None"
+  private_dns_zone_id = "System"
   default_node_pool {
     name           = "byopraks"
     node_count     = 2
