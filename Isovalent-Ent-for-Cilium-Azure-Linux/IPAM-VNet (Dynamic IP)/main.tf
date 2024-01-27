@@ -9,13 +9,13 @@ resource "azurerm_virtual_network" "ie4cdynamic" {
   resource_group_name = azurerm_resource_group.ie4cdynamic.name
 }
 resource "azurerm_subnet" "ie4cdynamicnodes" {
-  name                 = "azpcdynamic-subnet-node"
+  name                 = "ie4cdynamic-subnet-node"
   resource_group_name  = azurerm_resource_group.ie4cdynamic.name
   virtual_network_name = azurerm_virtual_network.ie4cdynamic.name
   address_prefixes     = ["10.240.0.0/16"]
 }
 resource "azurerm_subnet" "ie4cdynamicpods" {
-  name                 = "azpcdynamic-subnet-pods"
+  name                 = "ie4cdynamic-subnet-pods"
   resource_group_name  = azurerm_resource_group.ie4cdynamic.name
   virtual_network_name = azurerm_virtual_network.ie4cdynamic.name
   address_prefixes     = ["10.241.0.0/16"]
