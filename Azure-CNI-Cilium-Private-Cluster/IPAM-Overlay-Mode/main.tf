@@ -9,7 +9,7 @@ resource "azurerm_kubernetes_cluster" "azpcoverlaypr" {
   dns_prefix                          = "azpcoverlaypr"
   private_cluster_enabled             = true
   private_cluster_public_fqdn_enabled = true
-  private_dns_zone_id                 = "None"
+  private_dns_zone_id                 = "System"
   default_node_pool {
     name           = "azpcoverlaypr"
     node_count     = 2
