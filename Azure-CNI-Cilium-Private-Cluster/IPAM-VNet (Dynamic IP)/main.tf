@@ -43,5 +43,6 @@ resource "azurerm_kubernetes_cluster" "azpcdynapr" {
   network_profile {
     network_plugin  = "azure"
     ebpf_data_plane = "cilium"
+    load_balancer_sku = "standard"
   }
 }
