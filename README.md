@@ -1,5 +1,5 @@
 # What is the main purpose of the repo?
-This repo will discuss how to deploy Cilium on AKS clusters with Terraform using the following CNI's:
+This repo will discuss how to deploy **Cilium on AKS clusters with Terraform**:
 * Isovalent Enterprise for Cilium in Azure Marketplace (Overlay mode).
 * Isovalent Enterprise for Cilium in Azure Marketplace (Dynamic IP allocation mode).
 * Isovalent Enterprise for Cilium in Azure Marketplace (Overlay Mode) (Azure Linux as the host OS).
@@ -14,7 +14,7 @@ This repo will discuss how to deploy Cilium on AKS clusters with Terraform using
 * Azure CNI powered by Cilium (Dynamic IP allocation) for a Private AKS cluster.
 * Nodepools in Different Availability Zones (with Azure CNI powered by Cilium as the choice of CNI).
 
-You will also get to learn how to deploy an AKS cluster using the other AKS CNI's like:
+You will also get to learn how to deploy an **AKS cluster using the other AKS CNI's like**:
 * Kubenet in IPv4 and Dual Stock mode.
 * Bring your own CNI (BYOCNI).
 * Bring your own CNI (BYOCNI) with Azure Linux as the host OS.
@@ -23,7 +23,7 @@ You will also get to learn how to deploy an AKS cluster using the other AKS CNI'
 * Azure CNI with Azure NPM as the network policy.
 * Azure CNI with Calico as the network policy.
 
-Bonus:
+**Bonus**:
 * How to create a VM in Azure using Ubuntu 22.04 as the OS.
 
 # Ensure you have enough quota
