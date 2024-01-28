@@ -23,6 +23,9 @@ You will also get to learn how to deploy an AKS cluster using the other AKS CNI'
 * Azure CNI with Azure NPM as the network policy.
 * Azure CNI with Calico as the network policy.
 
+Bonus:
+* How to create a VM in Azure using Ubuntu 22.04 as the OS.
+
 # Ensure you have enough quota
 Go to the Subscription blade, navigate to "Usage + Quotas", and make sure you have enough quota for the following resources:
 
