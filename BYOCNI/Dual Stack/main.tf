@@ -18,6 +18,7 @@ resource "azurerm_kubernetes_cluster" "byocnids" {
   name                = "byocnidsaks"
   location            = azurerm_resource_group.byocnids.location
   resource_group_name = azurerm_resource_group.byocnids.name
+  kubernetes_version  = 1.29
   dns_prefix          = "byocnidsaks"
   default_node_pool {
     name           = "byocnids"
