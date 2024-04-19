@@ -30,6 +30,7 @@ resource "azurerm_kubernetes_cluster" "azcniolayds" {
   name                = "azcniolaydsaks"
   location            = azurerm_resource_group.azcniolayds.location
   resource_group_name = azurerm_resource_group.azcniolayds.name
+  kubernetes_version  = 1.29
   dns_prefix          = "azcniolaydsaks"
   default_node_pool {
     name             = "azcniolayds"
