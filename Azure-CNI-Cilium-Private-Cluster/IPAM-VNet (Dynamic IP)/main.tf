@@ -24,6 +24,7 @@ resource "azurerm_kubernetes_cluster" "azpcdynapr" {
   name                = "azpcdynapr"
   location            = azurerm_resource_group.azpcdynapr.location
   resource_group_name = azurerm_resource_group.azpcdynapr.name
+  kubernetes_version  = 1.29
   dns_prefix          = "azpcdynapr"
   private_cluster_enabled  = true
   private_cluster_public_fqdn_enabled = true
