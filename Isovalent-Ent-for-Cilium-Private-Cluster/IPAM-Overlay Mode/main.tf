@@ -6,6 +6,7 @@ resource "azurerm_kubernetes_cluster" "prie4colay" {
   name                = "prie4colay"
   location            = azurerm_resource_group.prie4colay.location
   resource_group_name = azurerm_resource_group.prie4colay.name
+  kubernetes_version  = 1.29
   dns_prefix          = "prie4colay"
   private_cluster_enabled  = true
   private_cluster_public_fqdn_enabled = true
