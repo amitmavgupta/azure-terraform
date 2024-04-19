@@ -18,6 +18,7 @@ resource "azurerm_kubernetes_cluster" "azcnioverlay" {
   name                = "azcnioverlayaks"
   location            = azurerm_resource_group.azcnioverlay.location
   resource_group_name = azurerm_resource_group.azcnioverlay.name
+  kubernetes_version  = 1.29
   dns_prefix          = "azcnioverlayaks"
   default_node_pool {
     name              = "azcnioverlay"
