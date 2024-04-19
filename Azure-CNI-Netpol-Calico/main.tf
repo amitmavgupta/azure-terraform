@@ -18,6 +18,7 @@ resource "azurerm_kubernetes_cluster" "azcni" {
   name                = "azcniaks"
   location            = azurerm_resource_group.azcni.location
   resource_group_name = azurerm_resource_group.azcni.name
+  kubernetes_version  = 1.29
   dns_prefix          = "azcniaks"
   default_node_pool {
     name           = "azcni"
