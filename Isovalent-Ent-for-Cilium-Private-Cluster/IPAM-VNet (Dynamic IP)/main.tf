@@ -24,6 +24,7 @@ resource "azurerm_kubernetes_cluster" "prie4cdyna" {
   name                = "prie4cdyna"
   location            = azurerm_resource_group.prie4cdyna.location
   resource_group_name = azurerm_resource_group.prie4cdyna.name
+  kubernetes_version  = 1.29
   dns_prefix          = "prie4cdyna"
   private_cluster_enabled  = true
   private_cluster_public_fqdn_enabled = true
