@@ -18,6 +18,7 @@ resource "azurerm_kubernetes_cluster" "kubenetipv4" {
   name                = "kubenetipv4aks"
   location            = azurerm_resource_group.kubenetipv4.location
   resource_group_name = azurerm_resource_group.kubenetipv4.name
+  kubernetes_version  = 1.29
   dns_prefix          = "kubenetipv4aks"
   default_node_pool {
     name              = "kubenetipv4"
