@@ -24,6 +24,7 @@ resource "azurerm_kubernetes_cluster" "azpcdynamical" {
   name                = "azpcdynamical"
   location            = azurerm_resource_group.azpcdynamical.location
   resource_group_name = azurerm_resource_group.azpcdynamical.name
+  kubernetes_version  = 1.29
   dns_prefix          = "azpcdynamical"
   default_node_pool {
     name           = "azpcdynamical"
