@@ -30,6 +30,7 @@ resource "azurerm_kubernetes_cluster" "kubenetds" {
   name                = "kubenetdsaks"
   location            = azurerm_resource_group.kubenetds.location
   resource_group_name = azurerm_resource_group.kubenetds.name
+  kubernetes_version  = 1.29
   dns_prefix          = "kubenetdsaks"
   default_node_pool {
     name       = "kubenetds"
