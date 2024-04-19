@@ -24,6 +24,7 @@ resource "azurerm_kubernetes_cluster" "ie4cdynamic" {
   name                = "ie4cdynamic"
   location            = azurerm_resource_group.ie4cdynamic.location
   resource_group_name = azurerm_resource_group.ie4cdynamic.name
+  kubernetes_version  = 1.29
   dns_prefix          = "ie4cdynamic"
   default_node_pool {
     name           = "ie4cdynamic"
