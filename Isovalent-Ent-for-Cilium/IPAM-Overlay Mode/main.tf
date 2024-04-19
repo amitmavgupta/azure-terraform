@@ -6,6 +6,7 @@ resource "azurerm_kubernetes_cluster" "ie4coverlay" {
   name                = "ie4coverlay"
   location            = azurerm_resource_group.ie4coverlay.location
   resource_group_name = azurerm_resource_group.ie4coverlay.name
+  kubernetes_version  = 1.29
   dns_prefix          = "ie4coverlay"
   default_node_pool {
     name       = "ie4coverlay"
