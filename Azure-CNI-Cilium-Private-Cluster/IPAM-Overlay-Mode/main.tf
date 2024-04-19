@@ -6,6 +6,7 @@ resource "azurerm_kubernetes_cluster" "azpcoverlaypr" {
   name                                = "azpcoverlaypr"
   location                            = azurerm_resource_group.azpcoverlaypr.location
   resource_group_name                 = azurerm_resource_group.azpcoverlaypr.name
+  kubernetes_version  = 1.29
   dns_prefix                          = "azpcoverlaypr"
   private_cluster_enabled             = true
   private_cluster_public_fqdn_enabled = true
