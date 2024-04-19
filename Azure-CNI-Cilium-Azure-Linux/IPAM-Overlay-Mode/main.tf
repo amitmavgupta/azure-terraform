@@ -6,6 +6,7 @@ resource "azurerm_kubernetes_cluster" "azpcoverlayal" {
   name                = "azpcoverlayal"
   location            = azurerm_resource_group.azpcoverlayal.location
   resource_group_name = azurerm_resource_group.azpcoverlayal.name
+  kubernetes_version  = 1.29
   dns_prefix          = "azpcoverlayal"
   default_node_pool {
     name       = "azpcoverlayal"
