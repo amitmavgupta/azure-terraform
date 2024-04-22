@@ -15,11 +15,11 @@ resource "azurerm_subnet" "azcnioverlay" {
   address_prefixes     = ["192.168.10.0/24"]
 }
 resource "azurerm_kubernetes_cluster" "azcnioverlay" {
-  name                = "azcnioverlayaks"
+  name                = "azcnioverlay"
   location            = azurerm_resource_group.azcnioverlay.location
   resource_group_name = azurerm_resource_group.azcnioverlay.name
   kubernetes_version  = 1.29
-  dns_prefix          = "azcnioverlayaks"
+  dns_prefix          = "azcnioverlay"
   default_node_pool {
     name              = "azcnioverlay"
     node_count        = 2
