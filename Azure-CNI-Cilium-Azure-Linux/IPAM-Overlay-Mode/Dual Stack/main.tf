@@ -1,15 +1,15 @@
-resource "azurerm_resource_group" "azpcoverlay" {
-  name     = "azpcoverlay"
+resource "azurerm_resource_group" "azpcoldsal" {
+  name     = "azpcoldsal"
   location = "canadacentral"
 }
-resource "azurerm_kubernetes_cluster" "azpcoverlay" {
-  name                = "azpcoverlay"
-  location            = azurerm_resource_group.azpcoverlay.location
-  resource_group_name = azurerm_resource_group.azpcoverlay.name
+resource "azurerm_kubernetes_cluster" "azpcoldsal" {
+  name                = "azpcoldsal"
+  location            = azurerm_resource_group.azpcoldsal.location
+  resource_group_name = azurerm_resource_group.azpcoldsal.name
   kubernetes_version  = 1.29
-  dns_prefix          = "azpcoverlay"
+  dns_prefix          = "azpcoldsal"
   default_node_pool {
-    name       = "azpcoverlay"
+    name       = "azpcoldsal"
     node_count = 2
     os_sku     = "AzureLinux"
     vm_size    = "Standard_DS2_v2"
