@@ -15,11 +15,11 @@ resource "azurerm_subnet" "byocni" {
   address_prefixes     = ["192.168.10.0/24"]
 }
 resource "azurerm_kubernetes_cluster" "byocni" {
-  name                = "byocniaks"
+  name                = "byocni"
   location            = azurerm_resource_group.byocni.location
   resource_group_name = azurerm_resource_group.byocni.name
   kubernetes_version  = 1.29
-  dns_prefix          = "byocniaks"
+  dns_prefix          = "byocni"
   default_node_pool {
     name           = "byocni"
     node_count     = 2
