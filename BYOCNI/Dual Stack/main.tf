@@ -15,11 +15,11 @@ resource "azurerm_subnet" "byocnids" {
   resource_group_name  = azurerm_resource_group.byocnids.name
 }
 resource "azurerm_kubernetes_cluster" "byocnids" {
-  name                = "byocnidsaks"
+  name                = "byocnids"
   location            = azurerm_resource_group.byocnids.location
   resource_group_name = azurerm_resource_group.byocnids.name
   kubernetes_version  = 1.29
-  dns_prefix          = "byocnidsaks"
+  dns_prefix          = "byocnids"
   default_node_pool {
     name           = "byocnids"
     node_count     = 2
