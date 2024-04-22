@@ -1,38 +1,38 @@
-resource "azurerm_resource_group" "azpcdynamical" {
-  name     = "azpcdynamical"
+resource "azurerm_resource_group" "azpcdynal" {
+  name     = "azpcdynal"
   location = "canadacentral"
 }
-resource "azurerm_virtual_network" "azpcdynamical" {
-  name                = "azpcdynamical-vnet"
+resource "azurerm_virtual_network" "azpcdynal" {
+  name                = "azpcdynal-vnet"
   address_space       = ["10.0.0.0/8"]
-  location            = azurerm_resource_group.azpcdynamical.location
-  resource_group_name = azurerm_resource_group.azpcdynamical.name
+  location            = azurerm_resource_group.azpcdynal.location
+  resource_group_name = azurerm_resource_group.azpcdynal.name
 }
-resource "azurerm_subnet" "azpcdynamicalnodes" {
-  name                 = "azpcdynamical-subnet-node"
-  resource_group_name  = azurerm_resource_group.azpcdynamical.name
-  virtual_network_name = azurerm_virtual_network.azpcdynamical.name
+resource "azurerm_subnet" "azpcdynalnodes" {
+  name                 = "azpcdynal-subnet-node"
+  resource_group_name  = azurerm_resource_group.azpcdynal.name
+  virtual_network_name = azurerm_virtual_network.azpcdynal.name
   address_prefixes     = ["10.240.0.0/16"]
 }
-resource "azurerm_subnet" "azpcdynamicalpods" {
-  name                 = "azpcdynamical-subnet-pods"
-  resource_group_name  = azurerm_resource_group.azpcdynamical.name
-  virtual_network_name = azurerm_virtual_network.azpcdynamical.name
+resource "azurerm_subnet" "azpcdynalpods" {
+  name                 = "azpcdynal-subnet-pods"
+  resource_group_name  = azurerm_resource_group.azpcdynal.name
+  virtual_network_name = azurerm_virtual_network.azpcdynal.name
   address_prefixes     = ["10.241.0.0/16"]
 }
-resource "azurerm_kubernetes_cluster" "azpcdynamical" {
-  name                = "azpcdynamical"
-  location            = azurerm_resource_group.azpcdynamical.location
-  resource_group_name = azurerm_resource_group.azpcdynamical.name
+resource "azurerm_kubernetes_cluster" "azpcdynal" {
+  name                = "azpcdynal"
+  location            = azurerm_resource_group.azpcdynal.location
+  resource_group_name = azurerm_resource_group.azpcdynal.name
   kubernetes_version  = 1.29
-  dns_prefix          = "azpcdynamical"
+  dns_prefix          = "azpcdynal"
   default_node_pool {
-    name           = "azpcdynamical"
+    name           = "azpcdynal"
     node_count     = 2
     vm_size        = "Standard_DS2_v2"
     os_sku         = "AzureLinux"
-    vnet_subnet_id = azurerm_subnet.azpcdynamicalnodes.id
-    pod_subnet_id  = azurerm_subnet.azpcdynamicalpods.id
+    vnet_subnet_id = azurerm_subnet.azpcdynalnodes.id
+    pod_subnet_id  = azurerm_subnet.azpcdynalpods.id
   }
 
   identity {
