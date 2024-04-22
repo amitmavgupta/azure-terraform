@@ -1,15 +1,15 @@
-resource "azurerm_resource_group" "azpcoverlayal" {
-  name     = "azpcoverlayal"
+resource "azurerm_resource_group" "azpcolayal" {
+  name     = "azpcolayal"
   location = "canadacentral"
 }
-resource "azurerm_kubernetes_cluster" "azpcoverlayal" {
-  name                = "azpcoverlayal"
-  location            = azurerm_resource_group.azpcoverlayal.location
-  resource_group_name = azurerm_resource_group.azpcoverlayal.name
+resource "azurerm_kubernetes_cluster" "azpcolayal" {
+  name                = "azpcolayal"
+  location            = azurerm_resource_group.azpcolayal.location
+  resource_group_name = azurerm_resource_group.azpcolayal.name
   kubernetes_version  = 1.29
-  dns_prefix          = "azpcoverlayal"
+  dns_prefix          = "azpcolayal"
   default_node_pool {
-    name       = "azpcoverlayal"
+    name       = "azpcolayal"
     node_count = 2
     os_sku     = "AzureLinux"
     vm_size    = "Standard_DS2_v2"
