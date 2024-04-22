@@ -15,11 +15,11 @@ resource "azurerm_subnet" "azcni" {
   address_prefixes     = ["10.10.0.0/16"]
 }
 resource "azurerm_kubernetes_cluster" "azcni" {
-  name                = "azcniaks"
+  name                = "azcni"
   location            = azurerm_resource_group.azcni.location
   resource_group_name = azurerm_resource_group.azcni.name
   kubernetes_version  = 1.29
-  dns_prefix          = "azcniaks"
+  dns_prefix          = "azcni"
   default_node_pool {
     name           = "azcni"
     node_count     = 2
