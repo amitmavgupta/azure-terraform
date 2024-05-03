@@ -5,7 +5,7 @@ resource "azurerm_resource_group" "byocni" {
     Environment        = "azure-demos"
     owner              = "Amit Gupta"
     expiry             = "2123-04-09 00:19:27.909960"
-    resourceNameSuffix = "ie4cdynamic"
+    resourceNameSuffix = "byocni"
   }
 }
 resource "azurerm_virtual_network" "byocni" {
