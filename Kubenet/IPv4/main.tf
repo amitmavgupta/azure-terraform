@@ -33,6 +33,7 @@ resource "azurerm_kubernetes_cluster" "kubenet" {
   
   network_profile {
     network_plugin   = "kubenet"
+    network_policy   = "calico"
     ip_versions      = ["IPv4"]
     pod_cidr         = "10.10.0.0/22"
     service_cidr     = "10.20.0.0/24"
