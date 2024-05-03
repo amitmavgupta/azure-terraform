@@ -37,8 +37,8 @@ resource "azurerm_kubernetes_cluster" "ie4cdynamic" {
     node_count     = 2
     vm_size        = "Standard_DS2_v2"
     os_sku         = "AzureLinux"
-    vnet_subnet_id = azurerm_subnet.azpcdynamicnodes.id
-    pod_subnet_id  = azurerm_subnet.azpcdynamicpods.id
+    vnet_subnet_id = azurerm_subnet.ie4cdynamicnodes.id
+    pod_subnet_id  = azurerm_subnet.ie4cdynamicpods.id
   }
 
   identity {
