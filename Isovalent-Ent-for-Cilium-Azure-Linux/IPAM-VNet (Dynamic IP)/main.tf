@@ -1,6 +1,12 @@
 resource "azurerm_resource_group" "ie4cdynamic" {
   name     = "ie4cdynamic"
   location = "canadacentral"
+  tags = {
+    Environment        = "azure-demos"
+    owner              = "Amit Gupta"
+    expiry             = "2123-04-09 00:19:27.909960"
+    resourceNameSuffix = "ie4cdynamic"
+  }
 }
 resource "azurerm_virtual_network" "ie4cdynamic" {
   name                = "ie4cdynamic-vnet"
