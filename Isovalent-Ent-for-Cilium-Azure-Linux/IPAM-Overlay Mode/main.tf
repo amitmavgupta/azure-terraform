@@ -1,6 +1,12 @@
 resource "azurerm_resource_group" "ie4coverlay" {
   name     = "ie4coverlay"
   location = "canadacentral"
+  tags = {
+    Environment        = "azure-demos"
+    owner              = "Amit Gupta"
+    expiry             = "2123-04-09 00:19:27.909960"
+    resourceNameSuffix = "ie4coverlay"
+  }
 }
 resource "azurerm_kubernetes_cluster" "ie4coverlay" {
   name                = "ie4coverlay"
