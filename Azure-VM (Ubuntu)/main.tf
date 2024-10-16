@@ -68,7 +68,7 @@ resource "azurerm_network_interface_security_group_association" "nsg-nic-associa
 
 # Create storage account for boot diagnostics
 resource "azurerm_storage_account" "azure_storage_account" {
-  name                     = "azurestorage28012024"
+  name                     = "azurestorage16102024"
   location                 = azurerm_resource_group.azurevm.location
   resource_group_name      = azurerm_resource_group.azurevm.name
   account_tier             = "Standard"
