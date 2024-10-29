@@ -30,8 +30,8 @@ resource "azurerm_kubernetes_cluster" "ie4cdynamic" {
     name           = "ie4cdynamic"
     node_count     = 2
     vm_size        = "Standard_DS2_v2"
-    vnet_subnet_id = azurerm_subnet.azpcdynamicnodes.id
-    pod_subnet_id  = azurerm_subnet.azpcdynamicpods.id
+    vnet_subnet_id = azurerm_subnet.ie4cdynamicnodes.id
+    pod_subnet_id  = azurerm_subnet.ie4cdynamicpods.id
   }
 
   identity {
