@@ -22,14 +22,4 @@ terraform {
 }
 provider "azurerm" {
   features {}
-  skip_provider_registration = "true"
-  alias                      = "test"
-}
-
-resource "azurerm_resource_provider_registration" "AzureLinux" {
-  name = "Microsoft.ContainerService"
-  feature {
-    name       = "AzureLinuxV3Preview"
-    registered = true
-  }
 }

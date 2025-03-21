@@ -1,15 +1,3 @@
-provider "azurerm" {
-  features {}
-  skip_provider_registration = "true"
-}
-
-resource "azurerm_resource_provider_registration" "AzureLinuxV3Preview" {
-  name = "Microsoft.ContainerService"
-  feature {
-    name       = "AzureLinuxV3Preview"
-    registered = true
-  }
-}
 resource "azurerm_resource_group" "byocnial" {
   name     = "byocnial"
   location = "canadacentral"
