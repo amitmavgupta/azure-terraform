@@ -20,3 +20,14 @@ terraform {
     }
   }
 }
+provider "azurerm" {
+  features {}
+}
+
+resource "azurerm_resource_provider_registration" "AzureLinuxV3Preview" {
+  name = "Microsoft.ContainerService"
+feature {
+    name       = "AzureLinuxV3Preview"
+    registered = true
+  }
+}
