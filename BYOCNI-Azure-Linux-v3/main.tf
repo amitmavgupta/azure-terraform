@@ -18,7 +18,7 @@ resource "azurerm_kubernetes_cluster" "byocnial" {
   name                = "byocnial"
   location            = azurerm_resource_group.byocnial.location
   resource_group_name = azurerm_resource_group.byocnial.name
-  kubernetes_version  = 1.31
+  kubernetes_version  = 1.30.0
   dns_prefix          = "byocnial"
   default_node_pool {
     name           = "byocnial"
