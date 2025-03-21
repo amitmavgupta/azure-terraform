@@ -1,8 +1,7 @@
 resource "azurerm_resource_provider_registration" "example" {
   name = "Microsoft.ContainerService"
   feature {
-    name       = "AzureLinuxV3Preview"
-    registered = true
+    name   = "AzureLinuxV3Preview"
   }
 }
 resource "azurerm_resource_group" "byocnial" {
