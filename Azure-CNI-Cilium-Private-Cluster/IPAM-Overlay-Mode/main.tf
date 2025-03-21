@@ -29,6 +29,6 @@ resource "azurerm_kubernetes_cluster" "azpcolaypr" {
     load_balancer_sku   = "standard"
     network_plugin      = "azure"
     network_plugin_mode = "overlay"
-    ebpf_data_plane     = "cilium"
+    network_data_plane  = "cilium"
   }
 }

@@ -14,7 +14,6 @@ resource "azurerm_kubernetes_cluster" "azpcoverlay" {
     vm_size    = "Standard_D2_v2"
     type       = "VirtualMachineScaleSets"
     zones      = ["1", "2"]
-    enable_auto_scaling = true
     min_count  = 2
     max_count  = 4
   }
@@ -29,6 +28,6 @@ resource "azurerm_kubernetes_cluster" "azpcoverlay" {
     dns_service_ip      = "10.20.0.10"
     network_plugin      = "azure"
     network_plugin_mode = "overlay"
-    ebpf_data_plane     = "cilium"
+    network_data_plane  = "cilium"
   }
 }
