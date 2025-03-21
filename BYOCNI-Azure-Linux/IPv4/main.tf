@@ -1,7 +1,13 @@
-resource "azurerm_resource_provider_registration" "example" {
+provider "azurerm" {
+  features {}
+  skip_provider_registration = "true"
+}
+
+resource "azurerm_resource_provider_registration" "AzureLinuxV3Preview" {
   name = "Microsoft.ContainerService"
   feature {
-    name   = "AzureLinuxV3Preview"
+    name       = "AzureLinuxV3Preview"
+    registered = true
   }
 }
 resource "azurerm_resource_group" "byocnial" {
