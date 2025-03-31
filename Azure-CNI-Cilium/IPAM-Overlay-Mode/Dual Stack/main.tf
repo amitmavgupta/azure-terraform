@@ -21,7 +21,7 @@ resource "azurerm_kubernetes_cluster" "azpcoverlay" {
   network_profile {
     network_plugin      = "azure"
     network_plugin_mode = "overlay"
-    network_data_plane  = "cilium"
+    network_data_plane = "cilium"
     ip_versions         = ["IPv4", "IPv6"]
     pod_cidrs           = ["10.10.0.0/22", "2001::/64"]
     service_cidrs       = ["10.20.0.0/24", "2001:1::/108"]

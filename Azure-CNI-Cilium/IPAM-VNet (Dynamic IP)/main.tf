@@ -40,6 +40,6 @@ resource "azurerm_kubernetes_cluster" "azpcdynamic" {
 
   network_profile {
     network_plugin  = "azure"
-    ebpf_data_plane = "cilium"
+    network_data_plane = "cilium"
   }
 }
