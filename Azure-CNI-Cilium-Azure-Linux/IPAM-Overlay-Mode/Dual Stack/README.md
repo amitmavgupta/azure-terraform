@@ -22,8 +22,8 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [azurerm_kubernetes_cluster.azpcoldsal](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/kubernetes_cluster) | resource |
-| [azurerm_resource_group.azpcoldsal](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group) | resource |
+| [azurerm_kubernetes_cluster.azpcolayal](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/kubernetes_cluster) | resource |
+| [azurerm_resource_group.azpcolayal](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group) | resource |
 
 ## Inputs
 
