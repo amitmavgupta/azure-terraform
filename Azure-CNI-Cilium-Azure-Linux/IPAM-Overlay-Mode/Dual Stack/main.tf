@@ -22,7 +22,11 @@ resource "azurerm_kubernetes_cluster" "azpcoldsal" {
   network_profile {
     network_plugin      = "azure"
     network_plugin_mode = "overlay"
+<<<<<<< HEAD
     network_data_plane = "cilium"
+=======
+    ebpf_data_plane     = "cilium"
+>>>>>>> 8b45fb5 (Rolling back changes from network_data_plane.)
     ip_versions         = ["IPv4", "IPv6"]
     pod_cidrs           = ["10.10.0.0/22", "2001::/64"]
     service_cidrs       = ["10.20.0.0/24", "2001:1::/108"]

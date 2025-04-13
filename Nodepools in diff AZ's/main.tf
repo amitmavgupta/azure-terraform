@@ -28,6 +28,6 @@ resource "azurerm_kubernetes_cluster" "azpcoverlay" {
     dns_service_ip      = "10.20.0.10"
     network_plugin      = "azure"
     network_plugin_mode = "overlay"
-    network_data_plane = "cilium"
+    ebpf_data_plane = "cilium"
   }
 }
