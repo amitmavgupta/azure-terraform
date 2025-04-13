@@ -24,11 +24,7 @@ resource "azurerm_kubernetes_cluster" "ie4coverlay" {
     dns_service_ip      = "10.20.0.10"
     network_plugin      = "azure"
     network_plugin_mode = "overlay"
-<<<<<<< HEAD
-    network_data_plane = "cilium"
-=======
-    ebpf_data_plane = "cilium"
->>>>>>> 8b45fb5 (Rolling back changes from network_data_plane.)
+    network_data_plane  = "cilium"
   }
 }
 
